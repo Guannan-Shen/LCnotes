@@ -86,14 +86,17 @@ public class MySorting {
             int mid = left + (right - left)/2;
             System.out.println("Mid: " + mid);
             // TODO: define the condition, if satisfied, assign right with mid
+            // TODO: in this way, right should meet the condition (if there were at least one match)
             if(nums[mid] >= target){
                 right = mid;
                 System.out.println("Right: " + right);
             }else{
+                // TODO: if there were no match for above condition involving mid, set left with mid + 1
                 left = mid + 1;
                 System.out.println("Left: " + left);
             }
         }
+        // TODO: when the loop finish, the left is the smallest one satisfy the above condition (if exists)
         return nums[left] == target ? left : -1;
     }
 
